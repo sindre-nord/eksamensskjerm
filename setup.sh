@@ -20,7 +20,7 @@ read answer2
 
 if [ "$answer2" = "n" ]; then
     # Find the path to this script
-    path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+    path=$(pwd)
     # The pem file has the same path as this script
     ca_cert_path="$path/eduroam.pem"
 fi
