@@ -9,9 +9,11 @@ if [ "$background_answer" = "n" ]; then
     # The background has the same path as this script
     background_path="${path}/ntnu_background.png"
     # Move it to the /usr/share/rpd-wallpaper folder
-    mv $background_path /usr/share/rpd-wallpaper/ntnu_background.png
-    # Set the background to the NTNU one
-    pcmanfm --set-wallpaper /usr/share/rpd-wallpaper/ntnu_background.png
+    new_path="/usr/share/rpd-wallpaper/ntnu_background.png"
+    mv $background_path $new_path
+    # Find and replace the old background with the new one
+    sed -i '/^wallpaper=/s/.*/${new_path}/' your_script.sh
+    
 fi
 # First ask user for the name of the link to vist on boot
 echo "What is the name of the link you want to visit on boot? This will be added to the autostart file.\n"
