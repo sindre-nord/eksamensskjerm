@@ -28,7 +28,7 @@ echo "@lxpanel --profile LXDE-pi
 point-rip
 #@chromium-browser --start-fullscreen --start-maximized https://ntnu.no -i 3600
 #-i 3600 betyr at siden oppdateres hvert 3600 sekund, altså hver time.
-@chromium-browser --start-fullscreen -a $link" >> /etc/xdg/lxsession/LXDE-pi/autostart
+@chromium-browser --start-fullscreen -a $link" > /etc/xdg/lxsession/LXDE-pi/autostart
 
 echo "Do you wish to overwrite the current wpa_supplicant.conf file? (y/n)"
 read answer
