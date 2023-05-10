@@ -12,8 +12,7 @@ if [ "$background_answer" = "n" ]; then
     new_path="/usr/share/rpd-wallpaper/ntnu_background.png"
     mv $background_path $new_path
     # Find and replace the old background with the new one
-    sed -i '/^wallpaper=/s/.*/$testing123/' /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf
-    # sed -i '/^wallpaper=/s/.*/${new_path}/' /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf
+    sed -i '/^wallpaper=/s/.*/${new_path}/' /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf
 fi
 # First ask user for the name of the link to vist on boot
 echo "What is the name of the link you want to visit on boot? This will be added to the autostart file.\n"
