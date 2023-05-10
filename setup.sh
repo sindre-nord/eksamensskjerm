@@ -12,7 +12,7 @@ if [ "$background_answer" = "n" ]; then
     new_path="/usr/share/rpd-wallpaper/ntnu_background.png"
     mv $background_path $new_path
     # Find and replace the old background with the new one
-    sed -i '/^wallpaper=/s/.*/${new_path}/' your_script.sh
+    sed -i '/^wallpaper=/s/.*/${new_path}/' desktop-items-0.conf
     
 fi
 # First ask user for the name of the link to vist on boot
