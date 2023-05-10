@@ -22,7 +22,7 @@ if [ "$answer2" = "n" ]; then
     # Find the path to this script
     path=$(pwd)
     # The pem file has the same path as this script
-    ca_cert_path="$path/eduroam.pem"
+    ca_cert_path="${path}/eduroam_ca.pem"
 fi
 
 #Parse user arg
