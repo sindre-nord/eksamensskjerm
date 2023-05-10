@@ -12,7 +12,7 @@ if [ "$background_answer" = "n" ]; then
     mv $background_path /usr/share/rpd-wallpaper/ntnu_background.png
     # Set the background to the NTNU one
     pcmanfm --set-wallpaper /usr/share/rpd-wallpaper/ntnu_background.png
-
+fi
 # First ask user for the name of the link to vist on boot
 echo "What is the name of the link you want to visit on boot? This will be added to the autostart file.\n"
 read link
