@@ -15,6 +15,15 @@ point-rip
 
 echo "Do you wish to overwrite the current wpa_supplicant.conf file? (y/n)"
 read answer
+echo "Before we do anything else, do you want to move the pem file? It it stays here it will be autodiscovered? (y/n)"
+read answer2
+
+if [ "$answer2" = "n" ]; then
+    # Find the path to this script
+    path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+    # The pem file has the same path as this script
+    ca_cert_path="$path/eduroam.pem"
+fi
 
 #Parse user arg
 if [ "$answer" = "y" ]; then
@@ -22,8 +31,10 @@ if [ "$answer" = "y" ]; then
     read username
     echo "Please enter the password:"
     read password
-    echo "Please enter the path to the ca_cert file:"
-    read ca_cert_path
+    if [ "$answer2" = "y" ]; then
+        echo "Please enter the path to the ca_cert file:"
+        read ca_cert_path
+    fi
 
     # Insert the following string into the wpa_supplicant.conf file
     echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
