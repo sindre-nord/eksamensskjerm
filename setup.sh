@@ -1,4 +1,18 @@
 
+echo "Welcome to the setup script for the displays at the Exams office"
+echo "Fistly, is the backgrond already set to the NTNU one=? (y/n)"
+read background_answer
+
+if [ "$background_answer" = "n" ]; then
+    # Find the path to this script
+    path=$(pwd)
+    # The background has the same path as this script
+    background_path="${path}/ntnu_background.png"
+    # Move it to the /usr/share/rpd-wallpaper folder
+    mv $background_path /usr/share/rpd-wallpaper/ntnu_background.png
+    # Set the background to the NTNU one
+    pcmanfm --set-wallpaper /usr/share/rpd-wallpaper/ntnu_background.png
+
 # First ask user for the name of the link to vist on boot
 echo "What is the name of the link you want to visit on boot? This will be added to the autostart file.\n"
 read link
