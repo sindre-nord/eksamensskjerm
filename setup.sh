@@ -56,7 +56,8 @@ network={
     phase2="auth=MSCHAPV2"
     priority=999
     proactive_key_caching=1
-}" >> /etc/wpa_supplicant/wpa_supplicant.conf
+}" > /etc/wpa_supplicant/wpa_supplicant.conf
+    # If you want you can also just use ">>" instead of ">" to append to the file instead of overwriting it
 
     # Insert the following string into the wpa_supplicant.conf file
     systemctl daemon-reload
